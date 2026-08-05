@@ -286,3 +286,61 @@ select option {
 @media (max-width: 1100px) {
   .hero, .grid, .sim-grid { grid-template-columns: 1fr; }
 }
+
+
+#networkMap {
+  width: 100%;
+  height: 520px;
+  border-radius: 18px;
+  z-index: 1;
+}
+
+.leaflet-container {
+  background: #0b1020;
+  border-radius: 18px;
+  font: inherit;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-tooltip {
+  background: rgba(18, 25, 49, 0.96);
+  color: #edf2ff;
+  border: 1px solid rgba(155, 173, 255, 0.25);
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.leaflet-popup-tip {
+  background: rgba(18, 25, 49, 0.96);
+  border: 1px solid rgba(155, 173, 255, 0.25);
+}
+
+.leaflet-popup-content {
+  margin: 12px 16px;
+  line-height: 1.5;
+}
+
+.leaflet-tooltip {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.leaflet-tooltip-top::before {
+  border-top-color: rgba(18, 25, 49, 0.96);
+}
+
+.leaflet-control-zoom a {
+  background: rgba(18, 25, 49, 0.92) !important;
+  color: #edf2ff !important;
+  border-color: rgba(155, 173, 255, 0.25) !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(18, 25, 49, 0.7) !important;
+  color: #9aa7c9 !important;
+}
+
+.leaflet-control-attribution a {
+  color: #77a6ff !important;
+}

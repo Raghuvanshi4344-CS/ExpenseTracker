@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Propel Fault Console</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
@@ -37,7 +38,7 @@
             <h2>Network view</h2>
             <div class="panel-meta">OpenStreetMap backdrop with clickable DT and pole overlays.</div>
           </div>
-          <svg id="networkMap" viewBox="0 0 800 520" class="map" aria-label="Network schematic"></svg>
+          <div id="networkMap" class="map" aria-label="Interactive network map"></div>
           <div id="mapDetail" class="map-detail">Click a pole or DT to inspect its record.</div>
         </section>
 
@@ -87,6 +88,7 @@
       </main>
     </div>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="/app.js"></script>
   </body>
 </html>

@@ -111,21 +111,3 @@ AsyncStorage stores strings locally on the device. This project converts the exp
 ### Delete flow
 
 The delete button calls `deleteExpense(id)`, which sends `DELETE /api/expenses/:id`. After that, the item is removed from React state and the updated list is saved to AsyncStorage. If the API is unavailable, it is still removed from the local list.
-
-## 15 interview questions and simple answers
-
-1. **What is React Native?** React Native lets us build native mobile interfaces using JavaScript and React components.
-2. **Why did you use Expo?** Expo provides a simple development toolchain and lets me run the app quickly on a device or emulator.
-3. **What does `useState` do?** It stores changing values and causes the component to re-render when a setter changes them.
-4. **Why is `useEffect` used here?** It runs the initial data-loading side effect after HomeScreen mounts.
-5. **Why use `FlatList`?** It is designed for efficient, scrollable rendering of arrays of data.
-6. **How does navigation work?** A native stack contains named screens, and navigation methods move between those screens.
-7. **How does Add Expense validate data?** It checks trimmed text fields and confirms the amount is a finite number greater than zero.
-8. **What is a prop in this project?** `ExpenseItem` receives the expense and callback functions from `HomeScreen` as props.
-9. **Why create `ExpenseItem`?** It keeps the repeated row UI in one small reusable component.
-10. **How does the app call the backend?** `api.js` uses `fetch` with GET, POST, and DELETE requests.
-11. **Why use Express?** Express gives us a small, readable way to define HTTP routes in Node.js.
-12. **Where is backend data stored?** In the `expenses` JavaScript array, so it resets when the server restarts.
-13. **What is AsyncStorage?** It is simple persistent key-value storage for strings on the device.
-14. **What happens if the API is down?** Home loads its AsyncStorage copy, and a new expense can be saved locally as a basic offline fallback.
-15. **How would you improve this for production?** I would add a database, authentication, stronger validation, environment-based API URLs, and better offline synchronization.

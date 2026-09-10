@@ -42,10 +42,16 @@ Terminal 2:
 
 ```bash
 cd frontend
-npm start
+npx expo start --lan
 ```
 
-Use the Expo terminal to open the app on an emulator or scan the QR code with Expo Go. The frontend uses `http://10.0.2.2:3000` on Android Emulator and `http://localhost:3000` on iOS Simulator/web. For a physical phone, replace the address in `frontend/src/services/api.js` with your computer's local network IP address.
+Use the Expo terminal to open the app on an emulator or scan the QR code with Expo Go. For a physical iPhone, create `frontend/.env` with your computer's local network address:
+
+```env
+EXPO_PUBLIC_API_URL=http://YOUR_COMPUTER_IP:3000/api
+```
+
+For example, if the computer's Wi-Fi address is `172.21.162.20`, use `http://172.21.162.20:3000/api`. Keep the phone and computer on the same Wi-Fi network, allow Expo Go's Local Network permission on iOS, and allow ports `8081` and `3000` through Windows Firewall. The backend does not need separate deployment for local testing. Deploy it separately only when the phone must connect from outside your local network; in that case use a public HTTPS API URL instead.
 
 ## Folder structure
 

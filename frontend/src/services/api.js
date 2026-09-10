@@ -1,9 +1,9 @@
 import { Platform } from 'react-native';
 
-// Android Emulator uses 10.0.2.2 to reach the computer running the server.
-const API_URL = Platform.OS === 'android'
+// Set EXPO_PUBLIC_API_URL for a physical phone; localhost points to the device.
+const API_URL = process.env.EXPO_PUBLIC_API_URL || (Platform.OS === 'android'
   ? 'http://10.0.2.2:3000/api'
-  : 'http://localhost:3000/api';
+  : 'http://localhost:3000/api');
 
 async function readResponse(response) {
   if (!response.ok) {

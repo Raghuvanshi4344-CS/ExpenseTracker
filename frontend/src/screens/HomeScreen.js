@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Alert, FlatList, Pressable, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useFocusEffect } from '@react-navigation/native';
 import ExpenseItem from '../components/ExpenseItem';
 import { deleteExpense, getExpenses } from '../services/api';
 
@@ -11,9 +12,9 @@ export default function HomeScreen({ navigation }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  useEffect(() => {
+  useFocusEffect(useCallback(() => {
     loadExpenses();
-  }, []);
+  }, []));
 
   async function loadExpenses() {
     try {

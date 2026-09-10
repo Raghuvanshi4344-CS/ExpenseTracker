@@ -28,6 +28,7 @@ npm install
 
 - `express`: creates the REST API and routes.
 - `cors`: allows the mobile app to call the API during development.
+- `better-sqlite3`: stores expenses in `backend/data/expenses.db`.
 
 ## Start the project
 
@@ -81,13 +82,13 @@ ExpenseTrack/
 - `ExpenseDetailScreen.js`: displays the expense passed through navigation params.
 - `ExpenseItem.js`: reusable child component that receives an expense and callback functions as props.
 - `api.js`: keeps all `fetch` calls in one small service file.
-- `server.js`: Express routes and the in-memory `expenses` array.
+- `server.js`: Express routes and SQLite database access.
 
 ## How the app works
 
 ### Frontend -> API -> backend
 
-`api.js` uses `fetch` to call the backend. Express matches the URL and HTTP method, changes the in-memory array, and sends JSON back. The frontend then updates its React state and AsyncStorage copy.
+`api.js` uses `fetch` to call the backend. Express matches the URL and HTTP method, stores changes in SQLite, and sends JSON back. The frontend then updates its React state and AsyncStorage copy. The SQLite file is created automatically in `backend/data/` and is ignored by git.
 
 ### Navigation
 
